@@ -19,7 +19,11 @@ const operatorInfo = [
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const Operator = ({ name }: { name: string }) => {
   const operator = operatorInfo.find((op) => op.name === name);
-  return <a href={operator?.website}>{operator?.text ? operator?.text : operator?.name}</a>;
+  return (
+    <a href={operator?.website} target="_blank" rel="noreferrer">
+      {operator?.text ? operator?.text : operator?.name}
+    </a>
+  );
 };
 
 const TrainResult = () => {
@@ -49,7 +53,7 @@ const TrainResult = () => {
               website to view timetables.
             </p>
           )}
-          <p>
+          <p className="wmnds-m-b-none">
             If you do not know which of these train companies you travel with, you’ll need to{' '}
             <a href="https://journeyplanner.tfwm.org.uk/">plan a journey</a>.
           </p>
