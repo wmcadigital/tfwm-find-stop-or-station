@@ -1,0 +1,28 @@
+@import '~assets/wmnds/vars';
+@import '~assets/wmnds/mixins';
+
+.serviceContainer {
+  margin-bottom: $size-lg;
+  overflow: hidden;
+
+  .serviceGrid {
+    display: flex;
+    margin-right: -$size-xs;
+    margin-left: -$size-xs;
+    flex-wrap: wrap;
+
+    .serviceBtn {
+      margin: $size-xs;
+    }
+  }
+}
+
+input:checked + .isChecked {
+  background-color: get-color(information);
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: get-color(information);
+  }
+}

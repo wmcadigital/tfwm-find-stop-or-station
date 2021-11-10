@@ -1,0 +1,23 @@
+@import '~assets/wmnds/vars';
+@import '~assets/wmnds/mixins';
+
+[class*='wmnds-'] {
+  .isFetching,
+  .isFetching:hover,
+  .isFetching:focus {
+    position: relative;
+    background-color: get-color(information, 70);
+
+    span {
+      margin-left: 1.5rem;
+    }
+
+    // sass-lint:disable-block class-name-format
+    [class*='wmnds-loader'] {
+      position: absolute;
+      top: 0.75rem;
+      left: -0.35rem;
+      border-top-color: get-color(primary);
+    }
+  }
+}

@@ -1,0 +1,21 @@
+@import '~assets/wmnds/vars';
+@import '~assets/wmnds/mixins';
+
+.modeIcon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+
+  &.bus {
+    fill: get-color(bus);
+  }
+
+  &.train {
+    fill: get-color(railway);
+  }
+
+  &.metro {
+    fill: get-color(metro);
+  }
+}

@@ -1,0 +1,893 @@
+[
+  {
+    "crsCode": "ACG",
+    "stationName": "Acocks Green",
+    "railZone": 3,
+    "parking": true,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "ADD",
+    "stationName": "Adderley Park",
+    "railZone": 2,
+    "parking": false,
+    "stepFreeAccess": null
+  },
+  {
+    "crsCode": "ALB",
+    "stationName": "Albrighton",
+    "parking": true,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "ALV",
+    "stationName": "Alvechurch",
+    "parking": true,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "AST",
+    "stationName": "Aston",
+    "railZone": 2,
+    "parking": false,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "ATH",
+    "stationName": "Atherstone",
+    "parking": true,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "BTG",
+    "stationName": "Barnt Green",
+    "parking": true,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "BER",
+    "stationName": "Bearley",
+    "parking": false,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "BEH",
+    "stationName": "Bedworth",
+    "parking": true,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "BKW",
+    "stationName": "Berkswell",
+    "railZone": 5,
+    "parking": true,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "BEP",
+    "stationName": "Bermuda Park",
+    "parking": true,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "BSC",
+    "stationName": "Bescot Stadium",
+    "railZone": 4,
+    "parking": true,
+    "stepFreeAccess": null
+  },
+  {
+    "crsCode": "BBK",
+    "stationName": "Bilbrook",
+    "parking": false,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "BHI",
+    "stationName": "Birmingham International",
+    "railZone": 5,
+    "parking": true,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "BMO",
+    "stationName": "Birmingham Moor Street",
+    "railZone": 1,
+    "parking": false,
+    "stepFreeAccess": "null"
+  },
+  {
+    "crsCode": "BHM",
+    "stationName": "Birmingham New Street",
+    "railZone": 1,
+    "parking": true,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "BSW",
+    "stationName": "Birmingham Snow Hill",
+    "railZone": 1,
+    "parking": true,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "BKT",
+    "stationName": "Blake Street",
+    "railZone": 5,
+    "parking": true,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "BKD",
+    "stationName": "Blakedown",
+    "parking": true,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "BLX",
+    "stationName": "Bloxwich",
+    "railZone": 5,
+    "parking": false,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "BWN",
+    "stationName": "Bloxwich North",
+    "railZone": 5,
+    "parking": true,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "BBS",
+    "stationName": "Bordesley",
+    "railZone": 2,
+    "parking": false,
+    "stepFreeAccess": null
+  },
+  {
+    "crsCode": "BRV",
+    "stationName": "Bournville",
+    "railZone": 3,
+    "parking": false,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "BMV",
+    "stationName": "Bromsgrove",
+    "parking": true,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "BUL",
+    "stationName": "Butlers Lane",
+    "railZone": 5,
+    "parking": false,
+    "stepFreeAccess": null
+  },
+  {
+    "crsCode": "CNL",
+    "stationName": "Canley",
+    "railZone": 5,
+    "parking": true,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "CAO",
+    "stationName": "Cannock",
+    "railZone": 6,
+    "parking": true,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "CRD",
+    "stationName": "Chester Road",
+    "railZone": 3,
+    "parking": true,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "CLV",
+    "stationName": "Claverdon",
+    "parking": false,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "CSL",
+    "stationName": "Codsall",
+    "parking": true,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "CEH",
+    "stationName": "Coleshill Parkway",
+    "parking": true,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "CWL",
+    "stationName": "Colwall",
+    "parking": true,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "CSY",
+    "stationName": "Coseley",
+    "railZone": 5,
+    "parking": true,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "COS",
+    "stationName": "Cosford",
+    "parking": false,
+    "stepFreeAccess": null
+  },
+  {
+    "crsCode": "COV",
+    "stationName": "Coventry",
+    "railZone": 5,
+    "parking": true,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "CAA",
+    "stationName": "Coventry Arena",
+    "railZone": 5,
+    "parking": false,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "CRA",
+    "stationName": "Cradley Heath",
+    "railZone": 5,
+    "parking": true,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "DZY",
+    "stationName": "Danzey",
+    "parking": true,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "DDG",
+    "stationName": "Dorridge",
+    "railZone": 5,
+    "parking": true,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "DTW",
+    "stationName": "Droitwich",
+    "parking": true,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "DUD",
+    "stationName": "Duddeston",
+    "railZone": 1,
+    "parking": false,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "DDP",
+    "stationName": "Dudley Port",
+    "railZone": 4,
+    "parking": true,
+    "stepFreeAccess": null
+  },
+  {
+    "crsCode": "EWD",
+    "stationName": "Earlswood",
+    "railZone": 5,
+    "parking": true,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "ERD",
+    "stationName": "Erdington",
+    "railZone": 3,
+    "parking": false,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "FWY",
+    "stationName": "Five Ways",
+    "railZone": 1,
+    "parking": false,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "FOK",
+    "stationName": "Four Oaks",
+    "railZone": 5,
+    "parking": true,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "GVH",
+    "stationName": "Gravelly Hill",
+    "railZone": 2,
+    "parking": false,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "GMV",
+    "stationName": "Great Malvern",
+    "parking": true,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "HAG",
+    "stationName": "Hagley",
+    "parking": true,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "HLG",
+    "stationName": "Hall Green",
+    "railZone": 3,
+    "parking": true,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "HIA",
+    "stationName": "Hampton-in-Arden",
+    "railZone": 5,
+    "parking": true,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "HSD",
+    "stationName": "Hamstead",
+    "railZone": 3,
+    "parking": false,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "HBY",
+    "stationName": "Hartlebury",
+    "parking": true,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "HTN",
+    "stationName": "Hatton",
+    "parking": true,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "HNF",
+    "stationName": "Hednesford",
+    "railZone": 6,
+    "parking": true,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "HNL",
+    "stationName": "Henley-in-Arden",
+    "parking": true,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "HFD",
+    "stationName": "Hereford",
+    "parking": false,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "HNK",
+    "stationName": "Hinckley",
+    "parking": true,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "JEQ",
+    "stationName": "Jewellery Quarter",
+    "railZone": 1,
+    "parking": false,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "KNW",
+    "stationName": "Kenilworth",
+    "parking": true,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "KID",
+    "stationName": "Kidderminster",
+    "parking": true,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "KNN",
+    "stationName": "Kings Norton",
+    "railZone": 3,
+    "parking": true,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "LAW",
+    "stationName": "Landywood",
+    "railZone": 6,
+    "parking": true,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "LGG",
+    "stationName": "Langley Green",
+    "railZone": 3,
+    "parking": true,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "LPW",
+    "stationName": "Lapworth",
+    "parking": true,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "LEH",
+    "stationName": "Lea Hall",
+    "railZone": 3,
+    "parking": true,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "LMS",
+    "stationName": "Leamington Spa",
+    "parking": true,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "LED",
+    "stationName": "Ledbury",
+    "parking": true,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "LIC",
+    "stationName": "Lichfield City",
+    "parking": true,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "LTV",
+    "stationName": "Lichfield Trent Valley",
+    "parking": true,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "LBK",
+    "stationName": "Long Buckby",
+    "parking": true,
+    "stepFreeAccess": null
+  },
+  {
+    "crsCode": "LOB",
+    "stationName": "Longbridge",
+    "railZone": 4,
+    "parking": true,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "LYE",
+    "stationName": "Lye",
+    "railZone": 5,
+    "parking": true,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "MVL",
+    "stationName": "Malvern Link",
+    "parking": true,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "MGN",
+    "stationName": "Marston Green",
+    "railZone": 4,
+    "parking": true,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "NBR",
+    "stationName": "Narborough",
+    "parking": true,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "NMP",
+    "stationName": "Northampton",
+    "parking": true,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "NFD",
+    "stationName": "Northfield",
+    "railZone": 4,
+    "parking": true,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "NUN",
+    "stationName": "Nuneaton",
+    "parking": true,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "OKN",
+    "stationName": "Oakengates",
+    "parking": false,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "OHL",
+    "stationName": "Old Hill",
+    "railZone": 4,
+    "parking": true,
+    "stepFreeAccess": null
+  },
+  {
+    "crsCode": "OLT",
+    "stationName": "Olton",
+    "railZone": 4,
+    "parking": true,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "PKG",
+    "stationName": "Penkridge",
+    "parking": true,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "PRY",
+    "stationName": "Perry Barr",
+    "railZone": 2,
+    "parking": false,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "PSW",
+    "stationName": "Polesworth",
+    "parking": false,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "RDC",
+    "stationName": "Redditch",
+    "parking": true,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "ROW",
+    "stationName": "Rowley Regis",
+    "railZone": 3,
+    "parking": true,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "RUG",
+    "stationName": "Rugby",
+    "parking": true,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "RGT",
+    "stationName": "Rugeley Town",
+    "railZone": 6,
+    "parking": true,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "RGL",
+    "stationName": "Rugeley Trent Valley",
+    "railZone": 6,
+    "parking": true,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "SAD",
+    "stationName": "Sandwell and Dudley",
+    "railZone": 4,
+    "parking": true,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "SLY",
+    "stationName": "Selly Oak",
+    "railZone": 2,
+    "parking": true,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "SEN",
+    "stationName": "Shenstone",
+    "parking": true,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "SFN",
+    "stationName": "Shifnal",
+    "parking": true,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "SRL",
+    "stationName": "Shirley",
+    "railZone": 4,
+    "parking": true,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "SHR",
+    "stationName": "Shrewsbury",
+    "parking": true,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "SMA",
+    "stationName": "Small Heath",
+    "railZone": 2,
+    "parking": false,
+    "stepFreeAccess": null
+  },
+  {
+    "crsCode": "SGB",
+    "stationName": "Smethwick Galton Bridge",
+    "railZone": 2,
+    "parking": true,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "SMR",
+    "stationName": "Smethwick Rolfe Street",
+    "railZone": 2,
+    "parking": false,
+    "stepFreeAccess": null
+  },
+  {
+    "crsCode": "SOL",
+    "stationName": "Solihull",
+    "railZone": 4,
+    "parking": true,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "SRI",
+    "stationName": "Spring Road",
+    "railZone": 3,
+    "parking": false,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "STA",
+    "stationName": "Stafford",
+    "parking": true,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "SCF",
+    "stationName": "Stechford",
+    "railZone": 3,
+    "parking": false,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "SBJ",
+    "stationName": "Stourbridge Junction",
+    "railZone": 5,
+    "parking": true,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "SBT",
+    "stationName": "Stourbridge Town",
+    "railZone": 5,
+    "parking": false,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "SAV",
+    "stationName": "Stratford-upon-Avon",
+    "parking": true,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "STY",
+    "stationName": "Stratford-upon-Avon Parkway",
+    "parking": true,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "SUT",
+    "stationName": "Sutton Coldfield",
+    "railZone": 4,
+    "parking": true,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "TAB",
+    "stationName": "Tame Bridge Parkway",
+    "railZone": 4,
+    "parking": true,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "TAM",
+    "stationName": "Tamworth",
+    "parking": true,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "TFC",
+    "stationName": "Telford Central",
+    "parking": true,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "THW",
+    "stationName": "The Hawthorns",
+    "railZone": 2,
+    "parking": true,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "TLK",
+    "stationName": "The Lakes",
+    "parking": false,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "THL",
+    "stationName": "Tile Hill",
+    "railZone": 5,
+    "parking": true,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "TIP",
+    "stationName": "Tipton",
+    "railZone": 5,
+    "parking": true,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "TYS",
+    "stationName": "Tyseley",
+    "railZone": 2,
+    "parking": false,
+    "stepFreeAccess": null
+  },
+  {
+    "crsCode": "UNI",
+    "stationName": "University",
+    "railZone": 2,
+    "parking": false,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "WSL",
+    "stationName": "Walsall",
+    "railZone": 4,
+    "parking": true,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "WRW",
+    "stationName": "Warwick",
+    "parking": true,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "WRP",
+    "stationName": "Warwick Parkway",
+    "parking": true,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "WTO",
+    "stationName": "Water Orton",
+    "parking": false,
+    "stepFreeAccess": null
+  },
+  {
+    "crsCode": "WLN",
+    "stationName": "Wellington",
+    "parking": true,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "WTE",
+    "stationName": "Whitlocks End",
+    "railZone": 4,
+    "parking": true,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "WMR",
+    "stationName": "Widney Manor",
+    "railZone": 4,
+    "parking": true,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "WMC",
+    "stationName": "Wilmcote",
+    "parking": false,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "WNE",
+    "stationName": "Wilnecote",
+    "parking": false,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "WTT",
+    "stationName": "Witton",
+    "railZone": 2,
+    "parking": false,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "WVH",
+    "stationName": "Wolverhampton",
+    "railZone": 5,
+    "parking": true,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "WDE",
+    "stationName": "Wood End",
+    "parking": false,
+    "stepFreeAccess": null
+  },
+  {
+    "crsCode": "WWW",
+    "stationName": "Wootton Wawen",
+    "parking": false,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "WOF",
+    "stationName": "Worcester Foregate Street",
+    "parking": false,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "WOS",
+    "stationName": "Worcester Shrub Hill",
+    "parking": true,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "WOP",
+    "stationName": "Worcestershire Parkway",
+    "parking": true,
+    "stepFreeAccess": "full"
+  },
+  {
+    "crsCode": "WYL",
+    "stationName": "Wylde Green",
+    "railZone": 4,
+    "parking": true,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "WYT",
+    "stationName": "Wythall",
+    "railZone": 5,
+    "parking": false,
+    "stepFreeAccess": "partial"
+  },
+  {
+    "crsCode": "YRD",
+    "stationName": "Yardley Wood",
+    "railZone": 3,
+    "parking": true,
+    "stepFreeAccess": "partial"
+  }
+]

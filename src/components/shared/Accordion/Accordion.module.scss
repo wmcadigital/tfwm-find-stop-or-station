@@ -1,0 +1,24 @@
+@import '~assets/wmnds/vars';
+@import '~assets/wmnds/mixins';
+
+[class*='wmnds-'] {
+  &.summary {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    & > *:not(:last-child) {
+      margin-bottom: $size-sm;
+    }
+  }
+
+  @media (min-width: $breakpoint-md) {
+    &.summary {
+      flex-wrap: nowrap;
+
+      & > *:not(:last-child) {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
