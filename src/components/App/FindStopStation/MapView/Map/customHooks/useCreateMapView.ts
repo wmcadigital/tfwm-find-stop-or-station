@@ -2,14 +2,14 @@
 /* eslint-disable prettier/prettier */
 import { useEffect, useState, useCallback } from 'react';
 import { loadModules, setDefaultOptions } from 'esri-loader';
-import { useStopStationContext } from 'globalState';
+import { useGlobalContext } from 'globalState';
 import mapMarker from 'globalState/helpers/mapMarker';
 
 const useCreateMapView = (mapContainerRef: any) => {
   const [viewState, setViewState] = useState<any>();
   const [isCreated, setIsCreated] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const [{ stops }] = useStopStationContext();
+  const [{ stops }] = useGlobalContext();
 
   const createMapView = useCallback(async () => {
     try {

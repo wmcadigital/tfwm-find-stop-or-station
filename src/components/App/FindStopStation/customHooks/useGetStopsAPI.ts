@@ -1,8 +1,8 @@
 /* eslint-disable prettier/prettier */
 import { useEffect, useState, useRef, useCallback } from 'react';
 import axios from 'axios';
-import { IStop } from 'globalState/StopStationContext/types/IStop';
-import { useStopStationContext } from 'globalState';
+import { IStop } from 'globalState/GlobalContext/types/IStop';
+import { useGlobalContext } from 'globalState';
 
 interface IError {
   title: string;
@@ -13,7 +13,7 @@ interface IError {
 const useGetStopsAPI = () => {
   const [results, setResults] = useState<any[]>([]);
   const [{ location, searchRadius, selectedModes, stops }, stopStationDispatch] =
-    useStopStationContext();
+    useGlobalContext();
   const [loading, setLoading] = useState(false); // Set loading state for spinner
   const [errorInfo, setErrorInfo] = useState<IError | null>(null); // Placeholder to set error messaging
 

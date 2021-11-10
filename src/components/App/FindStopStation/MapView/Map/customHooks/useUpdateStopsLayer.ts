@@ -1,9 +1,9 @@
 import { useCallback, useEffect } from 'react';
-import { useStopStationContext } from 'globalState';
+import { useGlobalContext } from 'globalState';
 
 const useUpdateStopsLayer = (isStopsLayerCreated: boolean, view: any) => {
   const map = view !== null && view?.map;
-  const [{ stops }] = useStopStationContext();
+  const [{ stops }] = useGlobalContext();
 
   const updateMapStops = useCallback(async () => {
     try {

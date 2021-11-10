@@ -1,11 +1,11 @@
 /* eslint-disable no-console */
 /* eslint-disable no-param-reassign */
 import { useEffect, useState, useCallback } from 'react';
-import { useStopStationContext } from 'globalState';
+import { useGlobalContext } from 'globalState';
 
 const usePointerEvents = (view: any, isStopsLayerCreated: boolean) => {
   const [areEventsAdded, setAreEventsAdded] = useState(false);
-  const [, stopStationDispatch] = useStopStationContext();
+  const [, stopStationDispatch] = useGlobalContext();
 
   const getClickedFeature = useCallback(
     async (hitTestResponse) => {

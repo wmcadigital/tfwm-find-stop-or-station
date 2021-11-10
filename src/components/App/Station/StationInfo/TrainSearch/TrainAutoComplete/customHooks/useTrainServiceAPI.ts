@@ -1,5 +1,4 @@
 import { useEffect, useState, useRef, useCallback } from 'react';
-import { ILocation } from 'globalState/GlobalContext/types/ILocation';
 import axios from 'axios';
 
 interface IError {
@@ -8,8 +7,8 @@ interface IError {
   isTimeoutError?: boolean;
 }
 
-const useLocationAPI = (query: string) => {
-  const [results, setResults] = useState<ILocation[]>([]);
+const useTrainServiceAPI = (query: string) => {
+  const [results, setResults] = useState<any[]>([]);
   const [loading, setLoading] = useState(false); // Set loading state for spinner
   const [errorInfo, setErrorInfo] = useState<IError | null>(null); // Placeholder to set error messaging
 
@@ -31,21 +30,17 @@ const useLocationAPI = (query: string) => {
   const clearApiTimeout = () => clearTimeout(apiTimeout.current);
 
   const handleApiResponse = useCallback((response) => {
-    const validResults = response.data.candidates.map((addr: any, i: number) => ({
-      id: `${addr.address.replace(/\W/g, '_')}_${i}`, // makeshift id from address
-      name: addr.address,
-      ...addr,
-    }));
-
-    if (validResults?.length > 0) {
-      setResults(validResults);
+    if (response.data) {
+      setResults(response.data.data);
     } else {
+      setResults([]);
       setErrorInfo({
         // Update error message
-        title: 'Please try another location',
-        message: 'No west midlands stops or stations were found near to your search area',
+        title: 'Please try another search',
+        message: 'No west midlands train stations were found to match your search',
       });
     }
+
     clearApiTimeout();
     setLoading(false);
   }, []);
@@ -69,38 +64,38 @@ const useLocationAPI = (query: string) => {
   const getAPIResults = useCallback(() => {
     source.current = axios.CancelToken.source();
     mounted.current = true; // Set mounted to true (used later to make sure we don't do events as component is unmounting)
-    const { REACT_APP_API_HOST, REACT_APP_LOCATION_KEY } = process.env; // Destructure env vars
+    const { REACT_APP_API_HOST, REACT_APP_API_KEY } = process.env; // Destructure env vars
     setLoading(true); // Update loading state to true as we are hitting API
     startApiTimeout();
     const options = {
       headers: {
-        'Ocp-Apim-Subscription-Key': REACT_APP_LOCATION_KEY,
+        'Ocp-Apim-Subscription-Key': REACT_APP_API_KEY,
       },
       cancelToken: source.current.token, // Set token with API call, so we can cancel this call on unmount
     };
 
     axios
-      .get(
-        `${REACT_APP_API_HOST}/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?singleLine=${encodeURI(
-          query.toLowerCase()
-        )}&f=pjson`,
-        options
-      )
+      .get(`${REACT_APP_API_HOST}/Rail/V2/Station/?q=${query}`, options)
       .then((res) => mounted.current && handleApiResponse(res))
       .catch(handleApiError);
-  }, [query, handleApiResponse, startApiTimeout]);
+  }, [handleApiResponse, startApiTimeout, query]);
 
   useEffect(() => {
-    getAPIResults();
+    if (!query.length) {
+      setResults([]);
+    } else {
+      getAPIResults();
+    }
     // Unmount / cleanup
     return () => {
       mounted.current = false; // Set mounted back to false on unmount
+      setResults([]); // clear results on unmount
       cancelRequest(); // cancel the request
       clearApiTimeout(); // clear timeout
     };
-  }, [getAPIResults]);
+  }, [getAPIResults, query]);
 
   return { loading, errorInfo, results, getAPIResults };
 };
 
-export default useLocationAPI;
+export default useTrainServiceAPI;

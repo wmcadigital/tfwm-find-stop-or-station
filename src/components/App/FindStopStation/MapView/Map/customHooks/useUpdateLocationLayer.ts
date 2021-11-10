@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { useEffect, useCallback } from 'react';
 import { loadModules } from 'esri-loader';
-import { useStopStationContext } from 'globalState';
+import { useGlobalContext } from 'globalState';
 import mapMarker from 'globalState/helpers/mapMarker';
 
 const useUpdateLocationLayer = (view: any) => {
   const map = view !== null && view?.map;
   const locationLayer = view?.map?.findLayerById('locationLayer');
 
-  const [{ location, searchRadius }] = useStopStationContext();
+  const [{ location, searchRadius }] = useGlobalContext();
 
   const updateLocationLayer = useCallback(async () => {
     try {

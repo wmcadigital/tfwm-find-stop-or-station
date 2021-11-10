@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import AutoComplete from 'components/shared/AutoComplete/AutoComplete';
-import { useStopStationContext } from 'globalState';
-import { ILocation } from 'globalState/StopStationContext/types/ILocation';
+import { useGlobalContext } from 'globalState';
+import { ILocation } from 'globalState/GlobalContext/types/ILocation';
 import useLocationAPI from '../customHooks/useLocationAPI';
 
 const LocationSearch = ({ label }: { label?: string }) => {
   const [query, setQuery] = useState<string>('');
-  const [{ location }, stopStationDispatch] = useStopStationContext();
+  const [{ location }, stopStationDispatch] = useGlobalContext();
   const { loading, results } = useLocationAPI(query);
 
   const onUpdate = (event: React.ChangeEvent<HTMLInputElement>) => {

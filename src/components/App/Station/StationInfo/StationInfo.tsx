@@ -11,6 +11,7 @@ import TrainDepartures from '../TrainDepartures/TrainDepartures';
 import Map from '../Map/Map';
 import railZoneData from '../railZoneData.json';
 import useFacilitiesAPI from './useFacilitiesAPI';
+import TrainSearch from './TrainSearch/TrainSearch';
 
 const StationParking = ({ parkingInfo }: { parkingInfo: any }) => {
   const { Parking } = parkingInfo.InterChange;
@@ -184,6 +185,7 @@ const StationInfo = () => {
       <div className="wmnds-grid wmnds-grid--spacing-md-2-lg">
         <div className="wmnds-col-1 wmnds-col-md-2-3">
           <TrainDepartures />
+          <TrainSearch />
           {loading ? (
             <Loader />
           ) : (

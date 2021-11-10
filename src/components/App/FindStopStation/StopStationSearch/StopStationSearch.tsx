@@ -1,4 +1,4 @@
-import { useStopStationContext } from 'globalState';
+import { useGlobalContext } from 'globalState';
 import Button from 'components/shared/Button/Button';
 import ModeSelect from 'components/shared/ModeSelect/ModeSelect';
 import { Mode } from 'globalState/GlobalContext/GlobalContext.types';
@@ -7,12 +7,12 @@ import RadiusSearch from './RadiusSearch/RadiusSearch';
 import useGetStopsAPI from '../customHooks/useGetStopsAPI';
 
 const StopStationSearch = () => {
-  const [{ selectedModes }, stopStationDispatch] = useStopStationContext();
+  const [{ selectedModes }, stopStationDispatch] = useGlobalContext();
   useGetStopsAPI();
   const handleSelect = (mode: Mode) => {
     let payload: Mode[] = [];
     if (selectedModes.includes(mode)) {
-      payload = selectedModes.filter((m) => m !== mode);
+      payload = selectedModes.filter((m: Mode) => m !== mode);
     } else {
       payload = [...selectedModes, mode];
     }

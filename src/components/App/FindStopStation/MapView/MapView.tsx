@@ -1,11 +1,11 @@
-import { useStopStationContext } from 'globalState';
+import { useGlobalContext } from 'globalState';
 import StopStationSearch from '../StopStationSearch/StopStationSearch';
 import SearchResult from '../StopStationSearch/SearchResults/SearchResult';
 import s from './MapView.module.scss';
 import Map from './Map/Map';
 
 const SelectedStop = () => {
-  const [{ selectedStopId, stops }] = useStopStationContext();
+  const [{ selectedStopId, stops }] = useGlobalContext();
   const selectedStop = stops.find(
     (stop) => stop.properties.atcoCode === selectedStopId || stop.properties.crs === selectedStopId
   );
@@ -27,7 +27,7 @@ const SelectedStop = () => {
 };
 
 const HelpMessage = () => {
-  const [{ selectedModes, selectedStopId, stops, location }] = useStopStationContext();
+  const [{ selectedModes, selectedStopId, stops, location }] = useGlobalContext();
   let helpMsg: any = null;
   if (location && selectedModes.length === 0) {
     helpMsg = <>Select modes of transport to view stops and stations near {location.name}</>;

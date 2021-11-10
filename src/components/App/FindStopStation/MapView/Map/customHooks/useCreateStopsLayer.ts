@@ -1,13 +1,13 @@
 import { useEffect, useState, useCallback } from 'react';
 import { loadModules } from 'esri-loader';
-import { useStopStationContext } from 'globalState';
+import { useGlobalContext } from 'globalState';
 import mapMarker from 'globalState/helpers/mapMarker';
 
 const useCreateStopsLayer = (view: any) => {
   const [isStopsLayerCreated, setIsStopsLayerCreated] = useState(false);
   const map = view !== null && view?.map;
 
-  const [{ stops, selectedModes, location }] = useStopStationContext();
+  const [{ stops, selectedModes, location }] = useGlobalContext();
 
   const createStopsLayer = useCallback(async () => {
     try {

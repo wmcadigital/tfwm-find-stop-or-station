@@ -5,6 +5,14 @@ export const initialState = (() => {
     stationPoint: null,
     stationId: '',
     stationDepartures: null,
+    trainQuery: {
+      from: '',
+      to: '',
+    },
+    stations: {
+      from: { id: null },
+      to: { id: null },
+    },
   };
 
   return state;
@@ -22,6 +30,10 @@ export const reducer = (state = initialState, action: TStation.StateAction): TSt
       return { ...state, selectedLine: action.payload };
     case 'UPDATE_SELECTED_ROUTE':
       return { ...state, selectedRoute: action.payload };
+    case 'UPDATE_RAIL_QUERY':
+      return { ...state, trainQuery: action.payload };
+    case 'UPDATE_RAIL_STATIONS':
+      return { ...state, stations: action.payload };
     // Default should return initial state if error
     default:
       return initialState;

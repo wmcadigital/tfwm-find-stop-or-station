@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { useStopStationContext } from 'globalState';
+import { useGlobalContext } from 'globalState';
 import Icon from 'components/shared/Icon/Icon';
 import Message from 'components/shared/Message/Message';
 import s from './RadiusSearch.module.scss';
 
 const RadiusSearch = () => {
-  const [{ searchRadius }, stopStationDispatch] = useStopStationContext();
+  const [{ searchRadius }, stopStationDispatch] = useGlobalContext();
   const [error, setError] = useState<string | null>();
 
   const { minRadius, maxRadius } = { minRadius: 0.1, maxRadius: 30 };

@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
-import { useStopStationContext } from 'globalState';
+import { useGlobalContext } from 'globalState';
 import Button from 'components/shared/Button/Button';
 import SearchResult from './SearchResult';
 
 const SearchResults = ({ classes }: { classes?: string }) => {
-  const [{ stops, searchRadius, selectedModes }] = useStopStationContext();
+  const [{ stops, searchRadius, selectedModes }] = useGlobalContext();
   const amountLimit = 25;
   const [amountToShow, setAmountToShow] = useState<number>(10);
   const showMoreButton = stops.length > amountLimit && amountToShow < stops.length;
