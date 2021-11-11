@@ -55,8 +55,8 @@ const useStopAPI = (apiPath?: string | null, type?: any) => {
       } else {
         setErrorInfo({
           // Update error message
-          title: 'Please try another location',
-          message: 'No west midlands stops or stations were found near to your search area',
+          title: 'There has been a problem.',
+          message: 'Unable to retrieve data for the search specified.',
         });
       }
       clearApiTimeout();

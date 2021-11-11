@@ -1,0 +1,12 @@
+@import '~assets/wmnds/vars';
+@import '~assets/wmnds/mixins';
+
+.icon {
+  width: $size-lg;
+  height: $size-lg;
+  fill: get-color(primary);
+}
+
+.nowrap {
+  flex-wrap: nowrap !important;
+}

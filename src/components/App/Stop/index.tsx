@@ -5,6 +5,7 @@ import { useStopContext } from 'globalState';
 // Components
 import Breadcrumbs from 'components/shared/Breadcrumbs/Breadcrumbs';
 import Loader from 'components/shared/Loader/Loader';
+import ErrorPage from 'components/shared/ErrorPage/ErrorPage';
 import useStopAPI from './customHooks/useStopAPI';
 import useDisruptionsAPI from './customHooks/useDisruptionsAPI';
 import StopInfo from './StopInfo/StopInfo';
@@ -43,9 +44,17 @@ const Stop = () => {
         <Breadcrumbs />
       </div>
       {stopPoint.loading || (!departures.results && departures.loading) ? (
-        <Loader />
+        <div className="wmnds-p-lg">
+          <Loader text="Finding stop" />
+        </div>
       ) : (
-        <>{stopPointData && stopDepartures ? <StopInfo /> : 'Error'}</>
+        <>
+          {stopPoint.errorInfo || departures.errorInfo ? (
+            <ErrorPage />
+          ) : (
+            <>{stopPointData && stopDepartures && <StopInfo />}</>
+          )}
+        </>
       )}
     </div>
   );

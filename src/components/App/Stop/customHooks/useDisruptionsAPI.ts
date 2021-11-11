@@ -36,6 +36,10 @@ const useDisruptionsAPI = (apiPath: string) => {
       if (response?.data) {
         setResults(response.data.disruptions);
         stopDispatch({ type: 'UPDATE_DISRUPTIONS', payload: response.data.disruptions });
+        stopDispatch({
+          type: 'UPDATE_DISRUPTIONS_STATE',
+          payload: { isLoading: false, errorInfo: null },
+        });
       } else {
         setErrorInfo({
           // Update error message
@@ -49,20 +53,29 @@ const useDisruptionsAPI = (apiPath: string) => {
     [stopDispatch]
   );
 
-  const handleApiError = (error: any) => {
-    setLoading(false); // Set loading state to false after data is received
-    setErrorInfo({
-      // Update error message
-      title: 'Please try again',
-      message: 'Apologies, we are having technical difficulties.',
-      isTimeoutError: axios.isCancel(error),
-    });
-    setResults(null); // Reset the results
-    if (!axios.isCancel(error)) {
-      // eslint-disable-next-line no-console
-      console.log({ error });
-    }
-  };
+  const handleApiError = useCallback(
+    (error: any) => {
+      setLoading(false); // Set loading state to false after data is received
+      stopDispatch({
+        type: 'UPDATE_DISRUPTIONS_STATE',
+        payload: {
+          isLoading: false,
+          errorInfo: {
+            title: 'Disruptions to this stop',
+            message:
+              'We are currently unable to provide disruptions information for this stop. Please try again later.',
+            isTimeoutError: axios.isCancel(error),
+          },
+        },
+      });
+      setResults(null); // Reset the results
+      if (!axios.isCancel(error)) {
+        // eslint-disable-next-line no-console
+        console.log({ error });
+      }
+    },
+    [stopDispatch]
+  );
 
   // Take main function out of useEffect, so it can be called elsewhere to retry the search
   const getAPIResults = useCallback(() => {
@@ -82,7 +95,7 @@ const useDisruptionsAPI = (apiPath: string) => {
       .get(`${REACT_APP_API_HOST}${apiPath}`, options)
       .then((res) => mounted.current && handleApiResponse(res))
       .catch(handleApiError);
-  }, [apiPath, handleApiResponse, startApiTimeout]);
+  }, [apiPath, handleApiResponse, startApiTimeout, handleApiError]);
 
   useEffect(() => {
     getAPIResults();
