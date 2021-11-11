@@ -4,15 +4,17 @@ import { useStationContext } from 'globalState';
 // Components
 import Breadcrumbs from 'components/shared/Breadcrumbs/Breadcrumbs';
 import Loader from 'components/shared/Loader/Loader';
+import ErrorPage from 'components/shared/ErrorPage/ErrorPage';
 import StationInfo from './StationInfo/StationInfo';
 import useStopAPI from './customHooks/useStationAPI';
 
 const Stop = () => {
   const [mounted, setMounted] = useState(false);
   const { id } = useParams<{ id: string }>();
-  const stationData = useStopAPI(`/Rail/V2/station/${id}`, 'UPDATE_STATION_POINT');
+  const stationId = id.toUpperCase();
+  const stationData = useStopAPI(`/Rail/V2/station/${stationId}`, 'UPDATE_STATION_POINT');
   const departures = useStopAPI(
-    `/Rail/V1/departuresandarrivals/${id}`,
+    `/Rail/V1/departuresandarrivals/${stationId}`,
     'UPDATE_STATION_DEPARTURES'
   );
   const [{ stationPoint, stationDepartures }, stationDispatch] = useStationContext();
@@ -28,8 +30,8 @@ const Stop = () => {
   }, [mounted, departures.getAPIResults]);
 
   useEffect(() => {
-    stationDispatch({ type: 'UPDATE_STATION_ID', payload: id });
-  }, [stationDispatch, id]);
+    stationDispatch({ type: 'UPDATE_STATION_ID', payload: stationId });
+  }, [stationDispatch, stationId]);
 
   return (
     <div className="wmnds-container wmnds-p-b-lg">
@@ -37,9 +39,17 @@ const Stop = () => {
         <Breadcrumbs />
       </div>
       {stationData.loading || (!departures.results && departures.loading) ? (
-        <Loader />
+        <div className="wmnds-p-lg">
+          <Loader text="Finding station" />
+        </div>
       ) : (
-        <>{stationPoint && stationDepartures && <StationInfo />}</>
+        <>
+          {!stationPoint?.data.length ? (
+            <ErrorPage type="station" />
+          ) : (
+            <>{stationPoint?.data.length && stationDepartures && <StationInfo />}</>
+          )}
+        </>
       )}
     </div>
   );
