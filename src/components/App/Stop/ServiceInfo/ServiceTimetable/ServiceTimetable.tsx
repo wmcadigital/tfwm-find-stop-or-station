@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useStopContext } from 'globalState';
 import Button from 'components/shared/Button/Button';
+import Message from 'components/shared/Message/Message';
 import Loader from 'components/shared/Loader/Loader';
 import Icon from 'components/shared/Icon/Icon';
 import TimetableTime from './TimetableTime';
@@ -93,7 +94,11 @@ const ServiceTimetable = () => {
                   ))}
                 </>
               ) : (
-                'None to show'
+                <Message
+                  type="error"
+                  title="There is a problem"
+                  message="We are currently unable to show departure routes from this stop."
+                />
               )}
             </>
           )}
@@ -116,7 +121,10 @@ const ServiceTimetable = () => {
             </div>
           </div>
           <div className="wmnds-col-1 wmnds-col-sm-1-3">
-            <Button btnClass="wmnds-btn--primary wmnds-col-1" text="View full route" />
+            {/*
+              Need to find a way to generate a link to the timetable page
+              <Button btnClass="wmnds-btn--primary wmnds-col-1" text="View full route" />
+             */}
           </div>
         </div>
       </div>
