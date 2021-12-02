@@ -49,7 +49,7 @@ const Stop = () => {
         </div>
       ) : (
         <>
-          {stopPoint.errorInfo || departures.errorInfo ? (
+          {stopPoint.errorInfo ? (
             <ErrorPage />
           ) : (
             <>{stopPointData && stopDepartures && <StopInfo />}</>

@@ -1,8 +1,10 @@
 import { useStopContext } from 'globalState';
+import useSetFavourites from 'components/App/customHooks/useSetFavourites';
 import Button from 'components/shared/Button/Button';
 
 const ServiceDepartures = ({ departures, isTram }: { departures: any[]; isTram?: boolean }) => {
   const [{ selectedLine, stopDepartures }] = useStopContext();
+  const { setFavourites, isFavourite } = useSetFavourites(selectedLine, isTram ? 'tram' : 'bus');
   if (!selectedLine.routes) return null;
   return (
     <div className="wmnds-m-b-lg">
@@ -17,9 +19,10 @@ const ServiceDepartures = ({ departures, isTram }: { departures: any[]; isTram?:
           <strong>{selectedLine.routes[0].operatorName}</strong> runs this service
         </p>
         <Button
-          iconLeft="general-star-empty"
-          text="Add to homepage"
+          iconLeft={`general-star${isFavourite ? '' : '-empty'}`}
+          text={isFavourite ? 'Remove from homepage' : 'Add to homepage'}
           btnClass="wmnds-btn--favourite"
+          onClick={() => setFavourites()}
         />
         <hr />
         <div className="wmnds-grid wmnds-grid--justify-between wmnds-grid--spacing-md-2-md">
@@ -37,8 +40,12 @@ const ServiceDepartures = ({ departures, isTram }: { departures: any[]; isTram?:
         </div>
         <div className="wmnds-live-departures__times">
           {departures.length
-            ? departures.map((departure: any) => (
-                <div key={departure.timeToArrival} className="wmnds-live-departures__time">
+            ? departures.map((departure: any, i: number) => (
+                <div
+                  // eslint-disable-next-line react/no-array-index-key
+                  key={`${departure.timeToArrival}_${i}`}
+                  className="wmnds-live-departures__time"
+                >
                   {Math.ceil(departure.timeToArrival / 60)} mins
                 </div>
               ))

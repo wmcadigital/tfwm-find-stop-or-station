@@ -32,23 +32,23 @@ const StopInfo = () => {
 
   return (
     <div>
-      {departures && (
-        <>
-          <div className="wmnds-grid wmnds-grid--spacing-md-2-lg">
-            <div className="wmnds-col-md-2-3">
-              <StopInfoHeader showMap={showMap} mapToggle={() => setShowMap(!showMap)}>
-                {stopPoint.locality}, {stopPoint.commonName} ({stopPoint.indicator}){' '}
-                <Icon
-                  className={`${s.modeIcon} ${isTram ? s.metro : s.bus}`}
-                  iconName={`modes-isolated-${isTram ? 'metro' : 'bus'}`}
-                />
-              </StopInfoHeader>
-            </div>
-          </div>
-          {showMap && <Map />}
-          <ServiceSelect isTram={isTram} />
-          <div className="wmnds-grid wmnds-grid--spacing-md-2-lg">
-            <div className="wmnds-col-1 wmnds-col-md-2-3">
+      <div className="wmnds-grid wmnds-grid--spacing-md-2-lg">
+        <div className="wmnds-col-md-2-3">
+          <StopInfoHeader showMap={showMap} mapToggle={() => setShowMap(!showMap)}>
+            {stopPoint.locality}, {stopPoint.commonName} ({stopPoint.indicator}){' '}
+            <Icon
+              className={`${s.modeIcon} ${isTram ? s.metro : s.bus}`}
+              iconName={`modes-isolated-${isTram ? 'metro' : 'bus'}`}
+            />
+          </StopInfoHeader>
+        </div>
+      </div>
+      {showMap && <Map />}
+      {departures && <>{!serviceInfo.loading && <ServiceSelect isTram={isTram} />}</>}
+      <div className="wmnds-grid wmnds-grid--spacing-md-2-lg">
+        <div className="wmnds-col-1 wmnds-col-md-2-3">
+          {departures ? (
+            <>
               {serviceInfo.loading ? (
                 <Loader text="Getting service information" />
               ) : (
@@ -72,17 +72,23 @@ const StopInfo = () => {
                   )}
                 </>
               )}
-            </div>
-            <div className="wmnds-col-1 wmnds-col-md-1-3">
-              <Sidebar
-                latitude={stopPoint.latitude}
-                longitude={stopPoint.longitude}
-                id={`SB_${stopAtcoCode}`}
-              />
-            </div>
-          </div>
-        </>
-      )}
+            </>
+          ) : (
+            <Message
+              type="error"
+              title="Please try again"
+              message="We are unable to get service information for this stop at the moment. Please try again later."
+            />
+          )}
+        </div>
+        <div className="wmnds-col-1 wmnds-col-md-1-3">
+          <Sidebar
+            latitude={stopPoint.latitude}
+            longitude={stopPoint.longitude}
+            id={`SB_${stopAtcoCode}`}
+          />
+        </div>
+      </div>
     </div>
   );
 };
