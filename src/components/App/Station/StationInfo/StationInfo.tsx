@@ -190,7 +190,7 @@ const StationInfo = () => {
             <Loader />
           ) : (
             <>
-              {results && (
+              {results?.length > 0 && (
                 <>
                   <Facilities facilities={results[0].Key} />
                   <StationParking parkingInfo={results[0].Key} />

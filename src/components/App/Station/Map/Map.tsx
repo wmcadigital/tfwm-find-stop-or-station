@@ -15,7 +15,7 @@ const Map = () => {
   const { isLoading } = useCreateMapView(mapContainerRef);
   return (
     <>
-      <div className="wmnds-screenreaders-only ">{address}</div>
+      <div className="wmnds-screenreaders-only">{address}</div>
       <div className={`${s.mapView}`}>
         <div
           id="bus-areas-map"
