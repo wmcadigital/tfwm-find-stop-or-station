@@ -20,7 +20,7 @@ const useFetch = <ExpectedResponse>(
   baseURL?: string
 ): UseFetchReturn<ExpectedResponse> => {
   const [response, setResponse] = useState<TypeOrNull<ExpectedResponse>>(null);
-  const [isFetching, setIsFetching] = useState<boolean>(true);
+  const [isFetching, setIsFetching] = useState<boolean>(false);
   const [hasError, setHasError] = useState<boolean>(false); // Placeholder to set error messaging
 
   useEffect(() => {
