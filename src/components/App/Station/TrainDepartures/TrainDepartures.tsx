@@ -1,17 +1,25 @@
 import React, { useState } from 'react';
 import { useStationContext } from 'globalState';
+import useFetch from 'components/App/customHooks/useFetch';
 import AutoComplete from 'components/shared/AutoComplete/AutoComplete';
+import Button from 'components/shared/Button/Button';
+
+const getTimeDiff = (a: string, b: string) => {
+  const times = [a.split(':'), b.split(':')];
+  const mins = times
+    .map((time) => Number(time[0]) * 60 + Number(time[1]))
+    .sort((x: number, y: number) => y - x);
+  return mins[0] - mins[1];
+};
 
 const TrainDepartures = () => {
   const [tabs, setTabs] = useState<string>('departures');
+  const [filterQuery, setFilterQuery] = useState<string>('');
+  const [selectedStation, setSelectedStation] = useState<any>();
+  const { isFetching, response } = useFetch<any>(
+    filterQuery.length > 2 ? `/Rail/v2/Station?q=${filterQuery}` : ''
+  );
   const [{ stationDepartures }] = useStationContext();
-  const getTimeDiff = (a: string, b: string) => {
-    const times = [a.split(':'), b.split(':')];
-    const mins = times
-      .map((time) => Number(time[0]) * 60 + Number(time[1]))
-      .sort((x: number, y: number) => y - x);
-    return mins[0] - mins[1];
-  };
   return (
     <div className="wmnds-live-departures-train wmnds-m-b-lg">
       <div className="wmnds-live-departures-tabs">
@@ -49,12 +57,29 @@ const TrainDepartures = () => {
             <AutoComplete
               name="trainLiveDepartures"
               placeholder="Search"
-              onUpdate={() => console.log('updated')}
+              initialQuery={filterQuery}
+              loading={isFetching}
+              onUpdate={(e) => setFilterQuery(e.target.value)}
+              onSelectResult={(res) => setSelectedStation(res)}
+              onClear={() => {
+                setFilterQuery('');
+                setSelectedStation(null);
+              }}
+              selectedItem={selectedStation}
+              results={response?.data}
             />
           </div>
           <hr className="wmnds-hide-mobile" />
-          <div className="wmnds-grid wmnds-m-b-md">
-            <div className="wmnds-col-1 wmnds-col-md-1-2" />
+          <div className="wmnds-grid wmnds-m-b-md wmnds-p-b-xsm">
+            <div className="wmnds-col-1 wmnds-col-md-1-2">
+              {selectedStation && (
+                <Button
+                  iconLeft="general-star-empty"
+                  text="Add to homepage"
+                  btnClass="wmnds-btn--favourite"
+                />
+              )}
+            </div>
             <hr className="wmnds-col-1 wmnds-hide-desktop" />
             <div className="wmnds-col-1 wmnds-col-md-1-2">
               <p className="wmnds-text-align-right wmnds-m-b-none">

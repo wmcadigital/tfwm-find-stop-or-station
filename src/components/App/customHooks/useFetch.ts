@@ -27,6 +27,7 @@ const useFetch = <ExpectedResponse>(
     if (!url) return;
 
     const fetchData = () => {
+      setIsFetching(true);
       axios
         .get<TypeOrNull<ExpectedResponse>>(url, { baseURL })
         .then((resp) => setResponse(resp.data))
