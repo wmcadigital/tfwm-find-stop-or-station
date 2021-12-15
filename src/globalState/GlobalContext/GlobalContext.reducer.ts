@@ -6,7 +6,7 @@ export const initialState = (() => {
     selectedModes: [],
     location: null,
     stops: [],
-    searchRadius: 1,
+    searchRadius: 0.5,
   };
 
   return state;

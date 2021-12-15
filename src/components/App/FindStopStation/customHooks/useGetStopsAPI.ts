@@ -129,7 +129,9 @@ const useGetStopsAPI = () => {
 
     axios
       .get(
-        `${REACT_APP_API_HOST}/Stop/v2/Nearest/${latitude}/${longitude}/${searchRadius * 1609}`,
+        `${REACT_APP_API_HOST}/Stop/v2/Nearest/${latitude}/${longitude}/${
+          searchRadius * 1609
+        }?near=true&active=true`,
         options
       )
       .then((res) => mounted.current && handleApiResponse(res))
