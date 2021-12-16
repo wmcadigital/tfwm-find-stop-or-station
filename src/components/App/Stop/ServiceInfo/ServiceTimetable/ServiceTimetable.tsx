@@ -162,7 +162,11 @@ const ServiceTimetable = () => {
                 </div>
               </div>
             ) : (
-              <div>Error</div>
+              <Message
+                type="error"
+                title="Timetable PDF unavailable"
+                message="Sorry, we are currently unable to provide a timetable PDF this stop."
+              />
             )}
           </div>
         </>

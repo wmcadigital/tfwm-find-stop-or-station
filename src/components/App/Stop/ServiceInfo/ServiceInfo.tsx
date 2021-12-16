@@ -4,7 +4,7 @@ import { useStopContext, useGlobalContext } from 'globalState';
 import Loader from 'components/shared/Loader/Loader';
 import Message from 'components/shared/Message/Message';
 import ServiceDepartures from './ServiceDepartures/ServiceDepartures';
-import ServiceDisruptions from './ServiceDisruptions/ServiceDisruptions';
+import ServiceDisruptions from '../../ServiceDisruptions/ServiceDisruptions';
 import ServiceTimetable from './ServiceTimetable/ServiceTimetable';
 
 const ServiceInfo = ({ isTram }: { isTram?: boolean }) => {

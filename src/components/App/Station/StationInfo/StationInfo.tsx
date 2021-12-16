@@ -1,6 +1,7 @@
 import { useState } from 'react';
 // Components
-import { useStationContext } from 'globalState';
+import { useStationContext, useGlobalContext } from 'globalState';
+import ServiceDisruptions from 'components/App/ServiceDisruptions/ServiceDisruptions';
 import Button from 'components/shared/Button/Button';
 import Icon from 'components/shared/Icon/Icon';
 import Loader from 'components/shared/Loader/Loader';
@@ -18,12 +19,17 @@ import TrainSearch from './TrainSearch/TrainSearch';
 const StationInfo = () => {
   const [showMap, setShowMap] = useState(false);
   const [{ stationPoint, stationId }] = useStationContext();
+  const [{ disruptions, disruptionsState }] = useGlobalContext();
   const station = stationPoint.data[0];
   const zoneInfo = railZoneData.find((railZone: any) => railZone.crsCode === stationId);
   const { results, loading } = useFacilitiesAPI(
     `https://journeyplanner.networkwestmidlands.com/API/WebApi/GetNearestStations/${station.lat.toFixed(
       5
     )}/${station.lon.toFixed(5)}`
+  );
+  const trainDisruptions = disruptions?.filter((disruption: any) => disruption.mode === 'train');
+  const hasDisruptions = trainDisruptions.some((disruption: any) =>
+    disruption.servicesAffected.some((service: any) => service.id === stationId)
   );
 
   return (
@@ -68,6 +74,11 @@ const StationInfo = () => {
         <div className="wmnds-col-1 wmnds-col-md-2-3">
           <TrainDepartures />
           <TrainSearch />
+          {disruptionsState.loading ? (
+            <Loader text="Checking for disruptions" />
+          ) : (
+            <>{hasDisruptions && <ServiceDisruptions mode="rail" />}</>
+          )}
           {loading ? (
             <Loader />
           ) : (

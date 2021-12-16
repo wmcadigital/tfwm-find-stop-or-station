@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useStopContext, useGlobalContext } from 'globalState';
+import { useStopContext, useStationContext, useGlobalContext } from 'globalState';
 import DisruptionIndicatorSmall from 'components/shared/DisruptionIndicator/DisruptionIndicatorSmall';
 import Accordion from 'components/shared/Accordion/Accordion';
 import Message from 'components/shared/Message/Message';
@@ -8,10 +8,11 @@ import s from './ServiceDisruptions.module.scss';
 
 const ServiceDisruptions = ({ mode }: { mode?: 'bus' | 'metro' | 'rail' }) => {
   const [{ selectedLine }] = useStopContext();
+  const [{ stationId }] = useStationContext();
   const [{ disruptions }] = useGlobalContext();
   const [serviceDisruptions, setServiceDisruptions] = useState<any>(null);
-  const lineId = selectedLine.id;
-  const lineName = selectedLine.name;
+  const lineId = selectedLine?.id || stationId;
+  const lineName = selectedLine?.name || null;
 
   useEffect(() => {
     if (!serviceDisruptions && disruptions?.length) {
