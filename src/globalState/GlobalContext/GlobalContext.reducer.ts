@@ -7,6 +7,11 @@ export const initialState = (() => {
     location: null,
     stops: [],
     searchRadius: 0.5,
+    disruptions: null,
+    disruptionsState: {
+      isLoading: true,
+      errorInfo: null,
+    },
   };
 
   return state;
@@ -24,6 +29,10 @@ export const reducer = (state = initialState, action: TGlobal.StateAction): TGlo
       return { ...state, searchRadius: action.payload };
     case 'UPDATE_SELECTED_STOP':
       return { ...state, selectedStopId: action.payload };
+    case 'UPDATE_DISRUPTIONS':
+      return { ...state, disruptions: action.payload };
+    case 'UPDATE_DISRUPTIONS_STATE':
+      return { ...state, disruptionsState: action.payload };
     case 'RESET_FORM':
       return initialState;
     // Default should return initial state if error

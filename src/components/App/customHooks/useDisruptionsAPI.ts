@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef, useCallback } from 'react';
-import { useStopContext } from 'globalState';
+import { useGlobalContext } from 'globalState';
 import axios from 'axios';
 
 interface IError {
@@ -10,7 +10,7 @@ interface IError {
 
 const useDisruptionsAPI = (apiPath: string) => {
   const [results, setResults] = useState<any>();
-  const [, stopDispatch] = useStopContext();
+  const [, dispatch] = useGlobalContext();
   const [loading, setLoading] = useState(false); // Set loading state for spinner
   const [errorInfo, setErrorInfo] = useState<IError | null>(null); // Placeholder to set error messaging
 
@@ -35,8 +35,8 @@ const useDisruptionsAPI = (apiPath: string) => {
     (response) => {
       if (response?.data) {
         setResults(response.data.disruptions);
-        stopDispatch({ type: 'UPDATE_DISRUPTIONS', payload: response.data.disruptions });
-        stopDispatch({
+        dispatch({ type: 'UPDATE_DISRUPTIONS', payload: response.data.disruptions });
+        dispatch({
           type: 'UPDATE_DISRUPTIONS_STATE',
           payload: { isLoading: false, errorInfo: null },
         });
@@ -50,13 +50,13 @@ const useDisruptionsAPI = (apiPath: string) => {
       clearApiTimeout();
       setLoading(false);
     },
-    [stopDispatch]
+    [dispatch]
   );
 
   const handleApiError = useCallback(
     (error: any) => {
       setLoading(false); // Set loading state to false after data is received
-      stopDispatch({
+      dispatch({
         type: 'UPDATE_DISRUPTIONS_STATE',
         payload: {
           isLoading: false,
@@ -74,7 +74,7 @@ const useDisruptionsAPI = (apiPath: string) => {
         console.log({ error });
       }
     },
-    [stopDispatch]
+    [dispatch]
   );
 
   // Take main function out of useEffect, so it can be called elsewhere to retry the search
