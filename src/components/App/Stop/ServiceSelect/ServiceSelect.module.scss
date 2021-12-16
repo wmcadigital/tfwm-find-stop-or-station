@@ -13,16 +13,23 @@
 
     .serviceBtn {
       margin: $size-xs;
+
+      .label {
+        padding-right: $size-md;
+        padding-left: $size-md;
+      }
     }
   }
 }
 
-input:checked + .isChecked {
-  background-color: get-color(information);
-
-  &:hover,
-  &:focus,
-  &:active {
+input {
+  &:checked + .label {
     background-color: get-color(information);
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: get-color(information);
+    }
   }
 }

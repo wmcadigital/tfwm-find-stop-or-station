@@ -78,7 +78,7 @@ const ServiceSelect = ({ isTram }: { isTram?: boolean }) => {
               checked={!selectedLine?.id}
               onChange={() => handleChange(null)}
             />
-            <label className={`${s.isChecked} wmnds-btn wmnds-btn--primary`} htmlFor="allServices">
+            <label className={`${s.label} wmnds-btn wmnds-btn--primary`} htmlFor="allServices">
               All
             </label>
           </div>
@@ -93,7 +93,7 @@ const ServiceSelect = ({ isTram }: { isTram?: boolean }) => {
                 checked={selectedLine?.id === service.id}
                 onChange={() => handleChange(service)}
               />
-              <label className={`${s.isChecked} wmnds-btn wmnds-btn--primary`} htmlFor={service.id}>
+              <label className={`${s.label} wmnds-btn wmnds-btn--primary`} htmlFor={service.id}>
                 {service.name}
               </label>
             </div>
