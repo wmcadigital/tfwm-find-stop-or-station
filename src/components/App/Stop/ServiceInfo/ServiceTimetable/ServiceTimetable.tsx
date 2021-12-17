@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import { useStopContext } from 'globalState';
+import useFetch from 'components/App/customHooks/useFetch';
 import Button from 'components/shared/Button/Button';
 import Message from 'components/shared/Message/Message';
 import Loader from 'components/shared/Loader/Loader';
 import Icon from 'components/shared/Icon/Icon';
 import TimetableTime from './TimetableTime';
 import useStopAPI from '../../customHooks/useStopAPI';
-import useFetch from '../../customHooks/useFetch';
 import useDepartureRouteAPI from '../../customHooks/useDepartureRouteAPI';
 
 const formatDate = (date: string) => {
@@ -162,7 +162,11 @@ const ServiceTimetable = () => {
                 </div>
               </div>
             ) : (
-              <div>Error</div>
+              <Message
+                type="error"
+                title="Timetable PDF unavailable"
+                message="Sorry, we are currently unable to provide a timetable PDF this stop."
+              />
             )}
           </div>
         </>

@@ -9,6 +9,8 @@ export type State = {
   stops: IStop[];
   searchRadius: number;
   selectedStopId?: string | null;
+  disruptions: any;
+  disruptionsState: any;
 };
 
 export type StateAction =
@@ -30,6 +32,14 @@ export type StateAction =
   | {
       type: 'UPDATE_SEARCH_RADIUS';
       payload: number;
+    }
+  | {
+      type: 'UPDATE_DISRUPTIONS';
+      payload: any;
+    }
+  | {
+      type: 'UPDATE_DISRUPTIONS_STATE';
+      payload: any;
     }
   | {
       type: 'UPDATE_SELECTED_STOP';

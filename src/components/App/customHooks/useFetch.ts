@@ -20,13 +20,14 @@ const useFetch = <ExpectedResponse>(
   baseURL?: string
 ): UseFetchReturn<ExpectedResponse> => {
   const [response, setResponse] = useState<TypeOrNull<ExpectedResponse>>(null);
-  const [isFetching, setIsFetching] = useState<boolean>(true);
+  const [isFetching, setIsFetching] = useState<boolean>(false);
   const [hasError, setHasError] = useState<boolean>(false); // Placeholder to set error messaging
 
   useEffect(() => {
     if (!url) return;
 
     const fetchData = () => {
+      setIsFetching(true);
       axios
         .get<TypeOrNull<ExpectedResponse>>(url, { baseURL })
         .then((resp) => setResponse(resp.data))

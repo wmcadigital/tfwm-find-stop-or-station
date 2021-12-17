@@ -6,7 +6,7 @@ const PlanJourney = ({ latitude, longitude }: { latitude: number; longitude: num
         <div className="wmnds-grid wmnds-grid--spacing-2-md">
           <div className="wmnds-col-1-2">
             <a
-              className="wmnds-btn wmnds-btn--secondary wmnds-col-1"
+              className="wmnds-btn wmnds-btn--secondary wmnds-col-1 wmnds-text-align-center"
               href={`https://journeyplanner.networkwestmidlands.com/?origin=${longitude},${latitude}`}
               target="_blank"
               rel="noreferrer"
@@ -16,7 +16,7 @@ const PlanJourney = ({ latitude, longitude }: { latitude: number; longitude: num
           </div>
           <div className="wmnds-col-1-2">
             <a
-              className="wmnds-btn wmnds-btn--secondary wmnds-col-1"
+              className="wmnds-btn wmnds-btn--secondary wmnds-col-1 wmnds-text-align-center"
               href={`https://journeyplanner.networkwestmidlands.com/?destination=${longitude},${latitude}`}
               target="_blank"
               rel="noreferrer"

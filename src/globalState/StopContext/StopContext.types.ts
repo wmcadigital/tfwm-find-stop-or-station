@@ -5,8 +5,6 @@ export type State = {
   selectedLine?: any;
   selectedRoute?: any;
   stopLines: any;
-  stopDisruptions: any;
-  stopDisruptionsState: any;
   stopTimetables: any;
 };
 
@@ -33,14 +31,6 @@ export type StateAction =
     }
   | {
       type: 'UPDATE_SELECTED_ROUTE';
-      payload: any;
-    }
-  | {
-      type: 'UPDATE_DISRUPTIONS';
-      payload: any;
-    }
-  | {
-      type: 'UPDATE_DISRUPTIONS_STATE';
       payload: any;
     }
   | {

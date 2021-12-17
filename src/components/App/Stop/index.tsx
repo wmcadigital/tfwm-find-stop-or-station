@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useStopContext } from 'globalState';
+import useDisruptionsAPI from 'components/App/customHooks/useDisruptionsAPI';
 
 // Components
 import Breadcrumbs from 'components/shared/Breadcrumbs/Breadcrumbs';
 import Loader from 'components/shared/Loader/Loader';
 import ErrorPage from 'components/shared/ErrorPage/ErrorPage';
 import useStopAPI from './customHooks/useStopAPI';
-import useDisruptionsAPI from './customHooks/useDisruptionsAPI';
 import StopInfo from './StopInfo/StopInfo';
 
 const Stop = () => {
